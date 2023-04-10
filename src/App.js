@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Canvas from './components/Canvas';
 
-function App() {
+const App = () => {
+  const [currentPattern, setCurrentPattern] = useState("");
+
+  const microphones = {
+    OMNIDIRECTIONAL: "Omnidirectional",
+    BIDIRECTIONAL: "Bidirectional",
+    CARDIOID: "Cardioid"
+  }
+
+  const onChange = (e) => {
+    setCurrentPattern(e.target.value);
+  }
+
+  const showMicrophones = () => {
+    return Object.keys(microphones).map((key, i) => {
+        return <li key={i}><button onClick={onChange} value={key}>{microphones[key]}</button></li>
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Polar Patterns</h1>
+      <ul>{showMicrophones()}</ul>
+      <Canvas currentPattern={currentPattern}/>
     </div>
   );
 }
