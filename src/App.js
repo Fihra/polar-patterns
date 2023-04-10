@@ -6,6 +6,7 @@ const App = () => {
   const [currentPattern, setCurrentPattern] = useState("");
 
   const microphones = {
+    CLEAR: "Clear",
     OMNIDIRECTIONAL: "Omnidirectional",
     BIDIRECTIONAL: "Bidirectional",
     CARDIOID: "Cardioid"
