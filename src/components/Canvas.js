@@ -1,11 +1,12 @@
-import { useEffect, useRef } from 'react';
-import { useOnDraw } from './Hooks';
+import { useEffect, useRef, useContext } from 'react';
+import { PatternContext } from '../context/PatternContext';
+import usePattern from '../context/CanvasContext';
 
 const Canvas = (props) => {
     const canvasRef = useRef(null);
+    const patterns = useContext(PatternContext);
 
-    const { currentPattern } = props;
-
+    const { currentPattern } = usePattern();
 
     const drawOmnidirectional = (context) => {
         //Omnidirectional
@@ -62,7 +63,8 @@ const Canvas = (props) => {
     }
 
     useEffect(() => {
-        console.log(currentPattern);
+        console.log(patterns);
+        console.log("here");
     }, [currentPattern]);
 
     useEffect(() => {
@@ -84,17 +86,17 @@ const Canvas = (props) => {
         context.arc(350, 350, 300, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-
+        console.log(patterns[currentPattern])
         switch(currentPattern) {
-            case "CLEAR":
+            case "Clear":
                 break;
-            case "OMNIDIRECTIONAL":
+            case "Omnidirectional":
                 drawOmnidirectional(context);
                 break;
-            case "BIDIRECTIONAL":
+            case "Bidirectional":
                 drawBidirectional(context);
                 break;
-            case "CARDIOID":
+            case "Cardioid":
                 drawCardioid(context);
                 break;
             default:
@@ -153,7 +155,7 @@ const Canvas = (props) => {
 
     return (
         <>
-        <h1>HI: {currentPattern}</h1>
+        <h3>Current: {currentPattern === "Clear" ? null : currentPattern }</h3>
         <canvas id="canvas" width='700' height='700'
             ref={canvasRef}
         />

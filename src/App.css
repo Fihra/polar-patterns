@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+
+.microphone-list {
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.microphone-list li {
+  padding: 12px;
+}

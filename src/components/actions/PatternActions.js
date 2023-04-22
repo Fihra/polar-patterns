@@ -1,0 +1,5 @@
+const PATTERNACTIONS = {
+    SET_PATTERN: "SET_PATTERN"
+}
+
+export default PATTERNACTIONS;
