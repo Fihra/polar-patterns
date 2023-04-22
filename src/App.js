@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import './App.css';
+import About from './components/About';
 import Canvas from './components/Canvas';
 import { PatternContext } from './context/PatternContext';
 import { CanvasProvider} from './context/CanvasContext';
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Polar Patterns</h1>
+      <About/>
       <CanvasProvider>
       <ul className="microphone-list">{showMicrophones()}</ul>
       <Canvas currentPattern={currentPattern}/>

@@ -10,8 +10,20 @@ const patterns = {
     "Bidirectional": {
         btnLabel: "Bidirectional"
     },
-    "Xardioid": {
+    "Cardioid": {
         btnLabel: "Cardioid"
+    },
+    "HyperCardioid": {
+        btnLabel: "HyperCardioid"
+    },
+    "SubCardioid": {
+        btnLabel: "SubCardioid"
+    },
+    "Shotgun": {
+        btnLabel: "Shotgun"
+    },
+    "Boundary": {
+        btnLabel: "Boundary"
     }
 }
 
