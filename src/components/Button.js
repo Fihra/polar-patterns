@@ -11,7 +11,7 @@ const Button = (props) => {
     }
 
     return(
-        <button onClick={onChange} value={key}>
+        <button className="pattern-btn" onClick={onChange} value={key}>
             {btnLabel}
         </button>
     )
