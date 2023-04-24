@@ -1,29 +1,37 @@
 import { createContext } from 'react';
+import { omnidirectionalData, bidirectionalData, cardioidData, hypercardioidData, subcardioidData, shotgunData, boundaryData } from '../components/patternData';
 
 const patterns = {
     "Clear": {
         btnLabel: "Clear",
     },
     "Omnidirectional": {
-        btnLabel: "Omnidirectional"
+        btnLabel: "Omnidirectional",
+        info: omnidirectionalData
     },
     "Bidirectional": {
-        btnLabel: "Bidirectional"
+        btnLabel: "Bidirectional",
+        info: bidirectionalData
     },
     "Cardioid": {
-        btnLabel: "Cardioid"
+        btnLabel: "Cardioid",
+        info: cardioidData
     },
     "HyperCardioid": {
-        btnLabel: "HyperCardioid"
+        btnLabel: "HyperCardioid",
+        info: hypercardioidData
     },
     "SubCardioid": {
-        btnLabel: "SubCardioid"
+        btnLabel: "SubCardioid",
+        info: subcardioidData
     },
     "Shotgun": {
-        btnLabel: "Shotgun"
+        btnLabel: "Shotgun",
+        info: shotgunData
     },
     "Boundary": {
-        btnLabel: "Boundary"
+        btnLabel: "Boundary",
+        info: boundaryData
     }
 }
 

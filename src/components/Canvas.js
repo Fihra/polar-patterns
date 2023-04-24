@@ -4,7 +4,6 @@ import usePattern from '../context/CanvasContext';
 
 const Canvas = (props) => {
     const canvasRef = useRef(null);
-    const patterns = useContext(PatternContext);
 
     const { currentPattern } = usePattern();
 

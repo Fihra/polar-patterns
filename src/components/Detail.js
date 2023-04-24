@@ -1,6 +1,13 @@
-import React from "react";
+import { React, useContext } from "react";
+import usePattern from '../context/CanvasContext';
+import { PatternContext } from '../context/PatternContext';
 
-const Detail = () => {
+const Detail = (props) => {
+    const { currentPattern } = usePattern();
+    const patterns = useContext(PatternContext);
+
+    console.log(patterns[currentPattern]);
+
     // const audioCtx = new AudioContext();
 
     // const posX = window.innerWidth / 2;
@@ -35,9 +42,24 @@ const Detail = () => {
     //     audioElement.pause();
     // }
 
+    const showInfo = () => {
+        console.log(currentPattern);
+        console.log(patterns[currentPattern].info);
+        if(currentPattern !== "Clear"){
+            return (
+                <ul>
+                    {patterns[currentPattern].info.map((point) => {
+                        return <li>{point}</li>
+                    })}
+                </ul>
+            )
+        }
+    }
+
     return(
         <div>
-            <h2>Microphone Pattern:</h2>
+            <h2>Details</h2>
+            {showInfo()}
             <p>
                 Information about the polar pattern goes in this section over here that I am including in this p tag portion for the body of this container as you can see from this.
             </p>

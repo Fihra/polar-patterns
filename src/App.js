@@ -20,6 +20,8 @@ const App = () => {
     })
   }
 
+
+
   return (
     <div className="App">
       <h1>Polar Patterns</h1>
@@ -29,6 +31,7 @@ const App = () => {
       <div className="container">
         <Canvas currentPattern={currentPattern}/>
         <Detail/>
+
       </div>
       </CanvasProvider>
     </div>
