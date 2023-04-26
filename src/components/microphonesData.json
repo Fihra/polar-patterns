@@ -1,0 +1,116 @@
+[
+    {
+        "name": "AKG p420",
+        "cost": 199,
+        "micPattern": "Omnidirectional",
+        "imageUrl": "akg-p420.png"
+    },
+    {
+        "name": "AT4022",
+        "cost": 349,
+        "micPattern": "Omnidirectional",
+        "imageUrl": "audio-technica-at4022.png"
+    },
+    {
+        "name": "Shure Beta 181",
+        "cost": 199,
+        "micPattern": "Omnidirectional",
+        "imageUrl": "shure-beta-181.png"
+    },
+    {
+        "name": "AKG p420",
+        "cost": 199,
+        "micPattern": "Bidirectional",
+        "imageUrl": "akg-p420.png"
+    },
+    {
+        "name": "Neumann U67",
+        "cost": 7495,
+        "micPattern": "Bidirectional",
+        "imageUrl": "Neumann_U67.png"
+    },
+    {
+        "name": "Aston",
+        "cost": 379,
+        "micPattern": "Bidirectional",
+        "imageUrl": "Aston.png"
+    },
+    {
+        "name": "Audio Technica AT2021",
+        "cost": 89,
+        "micPattern": "Cardioid",
+        "imageUrl": "Audio-Technica-AT2021.png"
+    },
+    {
+        "name": "Rode NT3",
+        "cost": 269,
+        "micPattern": "Cardioid",
+        "imageUrl": "Rode-NT3.png"
+    },
+    {
+        "name": "Beyerdynamic MC930",
+        "cost": 1199,
+        "micPattern": "Cardioid",
+        "imageUrl": "Beyerdynamic-MC-930.png"
+    },
+    {
+        "name": "Samson C01",
+        "cost": 79.99,
+        "micPattern": "HyperCardioid",
+        "imageUrl": "Samson_C01.png"
+    },
+    {
+        "name": "Shure KSM9HS",
+        "cost": 699,
+        "micPattern": "HyperCardioid",
+        "imageUrl": "Shure_KSM9HS.png"
+    },
+    {
+        "name": "Neumann KM185",
+        "cost": 1650,
+        "micPattern": "HyperCardioid",
+        "imageUrl": "Neumann_U67.png"
+    },
+    {
+        "name": "Shure KSM9HS",
+        "cost": 699,
+        "micPattern": "SubCardioid",
+        "imageUrl": "Shure_KSM9HS.png"
+    },
+    {
+        "name": "Schoeps Colette Series MK21",
+        "cost": 3300,
+        "micPattern": "SubCardioid",
+        "imageUrl": "Schoeps_Colette_Series_MK21.png"
+    },
+    {
+        "name": "Sennheiser MKE 600",
+        "cost": 329.95,
+        "micPattern": "Shotgun",
+        "imageUrl": "Sennheiser_MKE600.png"
+    },
+    {
+        "name": "Sennheiser MKH 416",
+        "cost": 999,
+        "micPattern": "Shotgun",
+        "imageUrl": "Sennheiser_MKH416.png"
+    },
+    {
+        "name": "Schoeps CMIT 5 U",
+        "cost": 2362,
+        "micPattern": "Shotgun",
+        "imageUrl": "Schoeps_CMIT_5U.png"
+    },
+    {
+        "name": "MicW iBoundary",
+        "cost": 89,
+        "micPattern": "Boundary",
+        "imageUrl": "MicW_iBoundary.png"
+    },
+    {
+        "name": "Crown PZM 30D",
+        "cost": 479,
+        "micPattern": "Boundary",
+        "imageUrl": "Crown_PZM_30D.png"
+    }
+]
