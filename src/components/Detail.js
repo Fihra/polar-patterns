@@ -3,12 +3,9 @@ import usePattern from '../context/CanvasContext';
 import { PatternContext } from '../context/PatternContext';
 import Carousel from 'react-spring-3d-carousel';
 
-
 const Detail = (props) => {
     const { currentPattern } = usePattern();
     const patterns = useContext(PatternContext);
-
-    console.log(patterns[currentPattern]);
 
     // const audioCtx = new AudioContext();
 
@@ -44,22 +41,6 @@ const Detail = (props) => {
     //     audioElement.pause();
     // }
 
-    const styling = () => {
-        return {width:"80px",height:"80px", backgroundColor:"blue"};
-    }
-
-    let slides = [
-        {key: 1,
-        content: <div style={styling()}>Card 1</div>
-        },
-        {key: 2,
-        content:<div style={styling()}>Card 2</div>
-        },
-        {key: 3,
-        content: <div style={styling()}>Card 3</div>,
-        }
-    ]
-
     const getSlides = () => {
         return patterns[currentPattern].info.images.map((image, key) => {
             return {
@@ -67,16 +48,14 @@ const Detail = (props) => {
                 content: 
                 <div>
                     <h3>{image.name} </h3>
-                    <p>{image.cost}</p>
-                    <img style={{height: 100, width: 100}} src={image.url} alt={key}/>
+                    <p>${image.cost}</p>
+                    <img style={{height: 100, width: 100}} src={require(`../assets/${image.imageUrl}`)} alt={key}/>
                 </div>
             }
         })
     }
 
     const showInfo = () => {
-        console.log(currentPattern);
-        console.log(patterns[currentPattern].info);
         if(currentPattern !== "Clear"){
             return (
                 <ul>
@@ -85,13 +64,8 @@ const Detail = (props) => {
                     })}
                 </ul>
             )
-        } else {
-            return (
-                <p>
-                Select a pattern from the buttons above
-                </p>
-            )
-        }
+        } 
+        return <p>Select a pattern from the buttons above</p>
     }
 
     const showCarousel = () => {
@@ -104,8 +78,9 @@ const Detail = (props) => {
 
     return(
         <div>
-            <h2>Details</h2>
+            <h2>{currentPattern !== "Clear" ? currentPattern : "Details"}</h2>
             {showInfo()}
+            <h3>Examples (based on <a href="https://www.sweetwater.com/">Sweetwater</a> prices)</h3>
             <div style={{height: "250px"}}>
             {showCarousel()}
             </div>
