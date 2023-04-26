@@ -1,6 +1,8 @@
 import { React, useContext } from "react";
 import usePattern from '../context/CanvasContext';
 import { PatternContext } from '../context/PatternContext';
+import Carousel from 'react-spring-3d-carousel';
+
 
 const Detail = (props) => {
     const { currentPattern } = usePattern();
@@ -42,16 +44,60 @@ const Detail = (props) => {
     //     audioElement.pause();
     // }
 
+    const styling = () => {
+        return {width:"80px",height:"80px", backgroundColor:"blue"};
+    }
+
+    let slides = [
+        {key: 1,
+        content: <div style={styling()}>Card 1</div>
+        },
+        {key: 2,
+        content:<div style={styling()}>Card 2</div>
+        },
+        {key: 3,
+        content: <div style={styling()}>Card 3</div>,
+        }
+    ]
+
+    const getSlides = () => {
+        return patterns[currentPattern].info.images.map((image, key) => {
+            return {
+                key: key,
+                content: 
+                <div>
+                    <h3>{image.name} </h3>
+                    <p>{image.cost}</p>
+                    <img style={{height: 100, width: 100}} src={image.url} alt={key}/>
+                </div>
+            }
+        })
+    }
+
     const showInfo = () => {
         console.log(currentPattern);
         console.log(patterns[currentPattern].info);
         if(currentPattern !== "Clear"){
             return (
                 <ul>
-                    {patterns[currentPattern].info.map((point) => {
+                    {patterns[currentPattern].info.details.map((point) => {
                         return <li>{point}</li>
                     })}
                 </ul>
+            )
+        } else {
+            return (
+                <p>
+                Select a pattern from the buttons above
+                </p>
+            )
+        }
+    }
+
+    const showCarousel = () => {
+        if(currentPattern !== "Clear") {
+            return (
+                <Carousel slides={getSlides()} showNavigation={true}/>
             )
         }
     }
@@ -60,9 +106,10 @@ const Detail = (props) => {
         <div>
             <h2>Details</h2>
             {showInfo()}
-            <p>
-                Information about the polar pattern goes in this section over here that I am including in this p tag portion for the body of this container as you can see from this.
-            </p>
+            <div style={{height: "250px"}}>
+            {showCarousel()}
+            </div>
+
             {/* <button onClick={playMusic}>Play</button>
             <button onClick={stopMusic}>Stop</button> */}
         </div>
