@@ -240,7 +240,6 @@ const Canvas = (props) => {
 
     return (
         <div>
-        <h2>Current: {currentPattern === "Clear" ? null : currentPattern }</h2>
         <canvas id="canvas" width='700' height='700'
             ref={canvasRef}
         />
