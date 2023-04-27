@@ -77,11 +77,11 @@ const Detail = (props) => {
     }
 
     return(
-        <div>
+        <div className="detail-container">
             <h2>{currentPattern !== "Clear" ? currentPattern : "Details"}</h2>
             {showInfo()}
             <h3>Examples (based on <a href="https://www.sweetwater.com/">Sweetwater</a> prices)</h3>
-            <div style={{height: "250px"}}>
+            <div className="carousel-container">
             {showCarousel()}
             </div>
 

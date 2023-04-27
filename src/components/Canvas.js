@@ -239,10 +239,9 @@ const Canvas = (props) => {
     }, [currentPattern]);
 
     return (
-        <div>
-        <canvas id="canvas" width='700' height='700'
-            ref={canvasRef}
-        />
+        <div className="canvas-container">
+            <canvas id="canvas" width='700' height='700'
+            ref={canvasRef}/>
         </div>
     )
 }

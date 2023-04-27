@@ -24,16 +24,24 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Polar Patterns</h1>
-      <About/>
+      <main className="top-section">
+        <h1>Polar Patterns</h1>
+        <About/>
+      </main>
+
       <CanvasProvider>
+      <section className="buttons-section">
       <ul className="microphone-list">{showMicrophones()}</ul>
+      </section>
       <div className="container">
         <Canvas currentPattern={currentPattern}/>
         <Detail/>
 
       </div>
       </CanvasProvider>
+      <footer>
+        Built in React.js by Fabian Fabro.
+      </footer>
     </div>
   );
 }
