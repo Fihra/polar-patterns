@@ -3,6 +3,7 @@ import './App.css';
 import About from './components/About';
 import Canvas from './components/Canvas';
 import Detail from './components/Detail';
+import Footer from './components/Footer';
 import { PatternContext } from './context/PatternContext';
 import { CanvasProvider} from './context/CanvasContext';
 import usePattern from './context/CanvasContext';
@@ -39,9 +40,7 @@ const App = () => {
 
       </div>
       </CanvasProvider>
-      <footer>
-        Built in React.js by Fabian Fabro.
-      </footer>
+      <Footer/>
     </div>
   );
 }
