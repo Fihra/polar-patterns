@@ -7,13 +7,13 @@ const Canvas = (props) => {
 
     const { currentPattern } = usePattern();
 
-    const red = 'rgba(500, 0, 0, 0.2)';//Omnidirectional
-    const orange = 'rgba(249, 180, 45, 0.2)';//Bidirectional
-    const green = 'rgba(0, 200, 0, 0.2)';//Cardioid
-    const purple = 'rgba(213, 184, 255, 0.2)';//HyperCardioid
-    const blue = 'rgba(3, 138, 255, 0.2)';//Subcardioid
-    const yellow = 'rgba(245, 230, 83, 0.5)';//Shotgun
-    const brown = 'rgba(130, 94, 92, 0.2)';//Boundary
+    const red = 'rgba(500, 0, 0, 0.5)';//Omnidirectional
+    const orange = 'rgba(250, 190, 88, 0.5)';//Bidirectional
+    const green = 'rgba(0, 200, 0, 0.5)';//Cardioid
+    const purple = 'rgba(102, 51, 153, 0.5)';//HyperCardioid
+    const blue = 'rgba(3, 138, 255, 0.5)';//Subcardioid
+    const yellow = 'rgba(233, 212, 96, 0.5)';//Shotgun
+    const brown = 'rgba(130, 94, 92, 0.5)';//Boundary
 
     const drawOmnidirectional = (context) => {
         //Omnidirectional
