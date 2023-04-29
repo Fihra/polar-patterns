@@ -4,8 +4,8 @@ import usePattern from '../context/CanvasContext';
 
 const Canvas = (props) => {
     const canvasRef = useRef(null);
-
     const { currentPattern } = usePattern();
+    const { windowSize } = props;
 
     const red = 'rgba(500, 0, 0, 0.5)';//Omnidirectional
     const orange = 'rgba(250, 190, 88, 0.5)';//Bidirectional
@@ -197,6 +197,13 @@ const Canvas = (props) => {
             return;
         }
 
+        if(windowSize[0] < 940) {
+            canvas.scale = 0.5;
+        } else {
+            canvas.width = 700;
+            canvas.height = 700;
+        }
+
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         //Canvas
@@ -236,11 +243,11 @@ const Canvas = (props) => {
                 return;
         }
 
-    }, [currentPattern]);
+    }, [currentPattern, windowSize]);
 
     return (
         <div className="canvas-container">
-            <canvas id="canvas" width='700' height='700'
+            <canvas id="canvas" width="700px" height="700"
             ref={canvasRef}/>
         </div>
     )
