@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import './App.css';
 import About from './components/About';
 import Canvas from './components/Canvas';
@@ -8,20 +8,38 @@ import { PatternContext } from './context/PatternContext';
 import { CanvasProvider} from './context/CanvasContext';
 import usePattern from './context/CanvasContext';
 import Button from './components/Button';
+import Dropdown from './components/Dropdown';
 
 const App = () => {
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHight
+  ]);
   const patterns = useContext(PatternContext);
 
   const { currentPattern } = usePattern();  
 
   const showMicrophones = () => {
     return Object.keys(patterns).map((key, i) => {
-      // console.log(patterns[key].btnLabel);
         return <li key={i}><Button btnLabel={patterns[key].btnLabel}/></li>
     })
   }
 
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    }
 
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    }
+
+  })
+
+  // console.log("Width: ", windowSize[0]);
+  // console.log("Height: ", windowSize[1]);
 
   return (
     <div className="App">
@@ -32,12 +50,11 @@ const App = () => {
 
       <CanvasProvider>
       <section className="buttons-section">
-      <ul className="microphone-list">{showMicrophones()}</ul>
+      {windowSize[0] > 940 ? <ul className="microphone-list">{showMicrophones()}</ul> : <Dropdown/>}
       </section>
       <div className="container">
-        <Canvas currentPattern={currentPattern}/>
+        <Canvas currentPattern={currentPattern} windowSize={windowSize}/>
         <Detail/>
-
       </div>
       </CanvasProvider>
       <Footer/>
