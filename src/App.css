@@ -5,6 +5,10 @@
   /* max-width: 1500px; */
 }
 
+:root {
+  --green-color: #008080;
+}
+
 body {
   font-family: 'Pathway Extreme', sans-serif;
   height: 100vh;
@@ -26,6 +30,11 @@ body {
 
 .container, .buttons-section {
   background-color: #faf3dd;
+}
+
+footer {
+  background-color: #faf3dd;
+  padding: 24px;
 }
 
 .about-container {
@@ -52,10 +61,10 @@ body {
 }
 
 .pattern-btn {
-  border: 0px solid #008080;
+  border: 0px solid var(--green-color);
   border-radius:2rem;
   padding: 14px;
-  background-color: #008080;
+  background-color: var(--green-color);
   color: white;
 }
 
@@ -70,16 +79,7 @@ body {
 
 .container {
   display:flex;
-  margin: 0 auto;
-  
-}
 
-.container .canvas-container {
-  flex: 1 1 50%;
-}
-
-.container .detail-container {
-  flex: 1 1 50%;
 }
 
 .carousel-container {
@@ -90,4 +90,30 @@ body {
 
 .carousel-container img {
   margin: 0 auto;
+}
+
+.buttons-section select {
+  background-color: var(--green-color);
+  color: white;
+  height: 50px;
+  width: 320px;
+}
+
+.buttons-section select-selected {
+  border: 1px solid transparent;
+}
+
+@media screen and (max-width: 940px) {
+  .container {
+    display: block;
+      flex-flow: row wrap;
+  }
+
+  .container .canvas-container {
+    order: 1;
+  }
+
+  .container .detail-container {
+    order: -1;
+  }
 }
