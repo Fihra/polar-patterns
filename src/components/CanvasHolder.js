@@ -1,5 +1,4 @@
-import { useEffect, useRef, useContext } from 'react';
-import { PatternContext } from '../context/PatternContext';
+import { useEffect, useRef } from 'react';
 import usePattern from '../context/CanvasContext';
 
 const CanvasHolder = (props) => {
@@ -186,8 +185,6 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-
-        // !mobileScale ? context.arc(canvas.width/2, canvas.height/2, 296, 0, Math.PI) : context.arc(canvas.width/2, canvas.height/2, 150, 0, Math.PI);
     }
 
     const drawListener = (context, canvas) => {
@@ -200,7 +197,6 @@ const CanvasHolder = (props) => {
     }
 
     useEffect(() => {
-        // drawing();
         const canvas = canvasRef.current;
         if(!canvas){
             return;
