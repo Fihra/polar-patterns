@@ -181,11 +181,13 @@ const CanvasHolder = (props) => {
         //Boundary
         context.strokeStyle = brown;
         context.beginPath();
-        context.arc(350, 350, 296, 0, Math.PI);
+        !mobileScale() ? context.arc(canvas.width/2, canvas.height/2, 296, 0, Math.PI) : context.arc(canvas.width/2, canvas.height/2, 150, 0, Math.PI);
         context.fillStyle = brown;
         context.fill();
         context.stroke();
         context.closePath();
+
+        // !mobileScale ? context.arc(canvas.width/2, canvas.height/2, 296, 0, Math.PI) : context.arc(canvas.width/2, canvas.height/2, 150, 0, Math.PI);
     }
 
     const drawListener = (context, canvas) => {
