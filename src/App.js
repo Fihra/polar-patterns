@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import './App.css';
 import About from './components/About';
-import Canvas from './components/Canvas';
 import Detail from './components/Detail';
 import Footer from './components/Footer';
 import { PatternContext } from './context/PatternContext';
@@ -9,6 +8,7 @@ import { CanvasProvider} from './context/CanvasContext';
 import usePattern from './context/CanvasContext';
 import Button from './components/Button';
 import Dropdown from './components/Dropdown';
+import CanvasHolder from './components/CanvasHolder';
 
 const App = () => {
   const [windowSize, setWindowSize] = useState([
@@ -53,7 +53,7 @@ const App = () => {
       {windowSize[0] > 940 ? <ul className="microphone-list">{showMicrophones()}</ul> : <Dropdown/>}
       </section>
       <div className="container">
-        <Canvas currentPattern={currentPattern} windowSize={windowSize}/>
+        <CanvasHolder currentPattern={currentPattern} windowSize={windowSize}/>
         <Detail/>
       </div>
       </CanvasProvider>
