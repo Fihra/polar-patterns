@@ -60,7 +60,7 @@ const CanvasHolder = (props) => {
         //Cardioid
         context.strokeStyle = green;
         context.beginPath();
-        context.arc(350, 470, 180, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(canvas.width/2, 470, 180, 0, 2 * Math.PI) : context.arc(canvas.width/2, 260, 90, 0, 2 * Math.PI);
         context.fillStyle = green;
         context.fill();
         context.stroke();
@@ -68,7 +68,7 @@ const CanvasHolder = (props) => {
 
         context.strokeStyle = green;
         context.beginPath();
-        context.arc(270, 320, 80, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(270, 320, 80, 0, 2 * Math.PI) : context.arc(250, canvas.height/2 - 20, 40, 0, 2 * Math.PI);
         context.fillStyle = green;
         context.fill();
         context.stroke();
@@ -76,7 +76,7 @@ const CanvasHolder = (props) => {
 
         context.strokeStyle = green;
         context.beginPath();
-        context.arc(430, 320, 80, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(430, 320, 80, 0, 2 * Math.PI) : context.arc(150, canvas.height/2 - 20, 40, 0, 2 * Math.PI);
         context.fillStyle = green;
         context.fill();
         context.stroke();
