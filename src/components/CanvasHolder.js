@@ -87,7 +87,7 @@ const CanvasHolder = (props) => {
         //Hypercardioid
         context.strokeStyle = purple;
         context.beginPath();
-        context.arc(350, 490, 160, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(canvas.width/2, 490, 160, 0, 2 * Math.PI) : context.arc(canvas.width/2, 270, 80, 0, 2 * Math.PI);
         context.fillStyle = purple;
         context.fill();
         context.stroke();
@@ -95,7 +95,7 @@ const CanvasHolder = (props) => {
 
         context.strokeStyle = purple;
         context.beginPath();
-        context.arc(260, 400, 80, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(260, 400, 80, 0, 2 * Math.PI) : context.arc(250, 220, 40, 0, 2 * Math.PI);
         context.fillStyle = purple;
         context.fill();
         context.stroke();
@@ -103,7 +103,7 @@ const CanvasHolder = (props) => {
 
         context.strokeStyle = purple;
         context.beginPath();
-        context.arc(440, 400, 80, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(440, 400, 80, 0, 2 * Math.PI) : context.arc(150, 220, 40, 0, 2 * Math.PI);
         context.fillStyle = purple;
         context.fill();
         context.stroke();
@@ -111,7 +111,7 @@ const CanvasHolder = (props) => {
 
         context.strokeStyle = purple;
         context.beginPath();
-        context.arc(350, 230, 100, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(350, 230, 100, 0, 2 * Math.PI) : context.arc(canvas.width/2, 140, 50, 0, 2 * Math.PI);
         context.fillStyle = purple;
         context.fill();
         context.stroke();
