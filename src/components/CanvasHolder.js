@@ -136,7 +136,7 @@ const CanvasHolder = (props) => {
         context.translate(context.width/2, context.height/2);
         context.scale(2, 1);
         context.beginPath();
-        context.arc(140, 350, 30, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(140, canvas.height/2, 30, 0, 2 * Math.PI) : context.arc(115, canvas.height/2, 15, 0, 2 * Math.PI);
         context.restore();
         context.fillStyle = yellow;
         context.fill();
@@ -147,7 +147,7 @@ const CanvasHolder = (props) => {
         context.translate(context.width/2, context.height/2);
         context.scale(2, 1);
         context.beginPath();
-        context.arc(210, 350, 30, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(210, 350, 30, 0, 2 * Math.PI) : context.arc(85, canvas.height/2, 15, 0, 2 * Math.PI);
         context.restore();
         context.fillStyle = yellow;
         context.fill();
@@ -158,7 +158,7 @@ const CanvasHolder = (props) => {
         context.translate(context.width/2, context.height/2);
         context.scale(1, 2);
         context.beginPath();
-        context.arc(350, 250, 75, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(350, 250, 75, 0, 2 * Math.PI) : context.arc(canvas.width/2, 135, 40, 0, 2 * Math.PI);
         context.restore();
         context.fillStyle = yellow;
         context.fill();
@@ -169,7 +169,7 @@ const CanvasHolder = (props) => {
         context.translate(context.width/2, context.height/2);
         context.scale(1, 2);
         context.beginPath();
-        context.arc(350, 115, 55, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(350, 115, 55, 0, 2 * Math.PI) : context.arc(canvas.width/2, 80, 30, 0, 2 * Math.PI);
         context.restore();
         context.fillStyle = yellow;
         context.fill();
