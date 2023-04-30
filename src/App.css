@@ -106,7 +106,7 @@ footer {
 @media screen and (max-width: 940px) {
   .container {
     display: block;
-      flex-flow: row wrap;
+    flex-flow: row wrap;
   }
 
   .container .canvas-container {
