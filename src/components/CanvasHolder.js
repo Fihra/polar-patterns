@@ -122,7 +122,7 @@ const CanvasHolder = (props) => {
         //Subcardioid
         context.strokeStyle = blue;
         context.beginPath();
-        context.arc(350, 410, 240, 0, 2 * Math.PI);
+        !mobileScale() ? context.arc(canvas.width/2, 410, 240, 0, 2 * Math.PI) : context.arc(canvas.width/2, 230, 120, 0, 2 * Math.PI);
         context.fillStyle = blue;
         context.fill();
         context.stroke();
