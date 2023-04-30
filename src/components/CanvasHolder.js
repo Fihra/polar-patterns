@@ -1,15 +1,11 @@
 import { useEffect, useRef, useContext } from 'react';
 import { PatternContext } from '../context/PatternContext';
 import usePattern from '../context/CanvasContext';
-import Canvas from 'react-responsive-canvas';
 
 const CanvasHolder = (props) => {
     const canvasRef = useRef(null);
     const { currentPattern } = usePattern();
     const { windowSize } = props;
-
-    const desktopRadius = 50;
-    const mobileRadius = 50;
 
     const red = 'rgba(500, 0, 0, 0.5)';//Omnidirectional
     const orange = 'rgba(250, 190, 88, 0.5)';//Bidirectional
@@ -18,6 +14,14 @@ const CanvasHolder = (props) => {
     const blue = 'rgba(3, 138, 255, 0.5)';//Subcardioid
     const yellow = 'rgba(233, 212, 96, 0.5)';//Shotgun
     const brown = 'rgba(130, 94, 92, 0.5)';//Boundary
+
+    const scalePercentage = (canvasSize, radius) => {
+        return canvasSize * radius;
+    }
+
+    const mobileScale = () => {
+        return windowSize[0] < 940;
+    }
 
     const drawOmnidirectional = (context, canvas) => {
         //Omnidirectional
@@ -31,10 +35,13 @@ const CanvasHolder = (props) => {
     }
 
     const drawBidirectional = (context, canvas) => {
+        const bidirectionalRadius = 0.57;
+        const scaleSize = 0.72;
+        
         //Bidirectional
         context.strokeStyle = orange;
         context.beginPath();
-        context.arc(350, 200,150, 0, 2 * Math.PI);
+        context.arc(canvas.width/2, mobileScale() ? canvas.height - scalePercentage(canvas.height, scaleSize - 0.06) : canvas.height - scalePercentage(canvas.height, scaleSize), canvas.height/2 - scalePercentage(canvas.height/2, bidirectionalRadius), 0, 2 * Math.PI);
         context.fillStyle = orange;
         context.fill();
         context.stroke();
@@ -42,7 +49,7 @@ const CanvasHolder = (props) => {
 
         context.strokeStyle = orange;
         context.beginPath();
-        context.arc(350, 500,150, 0, 2 * Math.PI);
+        context.arc(canvas.width/2, mobileScale() ? canvas.height - scalePercentage(canvas.height, 1.00 - scaleSize + 0.04): canvas.height - scalePercentage(canvas.height, 1.00 - scaleSize) , canvas.height/2 - scalePercentage(canvas.height/2, bidirectionalRadius) - 5, 0, 2 * Math.PI);
         context.fillStyle = orange;
         context.fill();
         context.stroke();
@@ -244,7 +251,7 @@ const CanvasHolder = (props) => {
     }, [currentPattern, windowSize]);
 
     const checkWindowSize = () => {
-        if(windowSize[0] < 940) {
+        if(mobileScale()) {
             return (
                 <canvas id="canvas" width="400px" height="400"
                  ref={canvasRef}/>
