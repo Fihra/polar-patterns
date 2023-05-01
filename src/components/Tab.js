@@ -37,7 +37,8 @@ const Tab = (props) => {
 
                 return (
                     <div >
-                        <div onMouseEnter={showPanel} onMouseOut={hidePanel} data-info={original} onMouseOver={showHover}>
+                        <div className="diaphragm-category" onMouseEnter={showPanel} onMouseOut={hidePanel} data-info={original} onMouseOver={showHover}>
+                            
                             <p><b>{words.length > 1 ? words[0] + ' ' + words[1] : words[0]}:</b> {data[item]}</p>
                         </div>
                     
