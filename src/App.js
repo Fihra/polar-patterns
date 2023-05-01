@@ -9,6 +9,7 @@ import usePattern from './context/CanvasContext';
 import Button from './components/Button';
 import Dropdown from './components/Dropdown';
 import CanvasHolder from './components/CanvasHolder';
+import Accordion from './components/Accordion';
 
 const App = () => {
   const [windowSize, setWindowSize] = useState([
@@ -46,6 +47,7 @@ const App = () => {
       <main className="top-section">
         <h1>Polar Patterns</h1>
         <About/>
+        <Accordion/>
       </main>
 
       <CanvasProvider>
