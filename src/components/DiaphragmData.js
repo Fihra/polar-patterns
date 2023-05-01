@@ -27,7 +27,7 @@ export const diaphragmDefinitions = {
     frequencyResponse: "range of the sound that a microphone can reproduce and how its output varies within its range",
     addressType: "Angle where the microphone points to capture sound",
     polarPatterns: "consistency use of patterns",
-    sensitivity: "high",
+    sensitivity: "the voltage that's produced for the sound pressure",
     selfNoise: "microphone's audio signal adds noise when processed (often boosted levels)",
     price: "usually large are more expensive than small"
 }
