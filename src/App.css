@@ -7,11 +7,18 @@
 
 :root {
   --green-color: #008080;
+  --beige-color: #faf3dd;
+  --top-color: #cdbdb6;
+  --accordion-color: #9c918d;
 }
 
 body {
   font-family: 'Pathway Extreme', sans-serif;
   height: 100vh;
+}
+
+body > div {
+  width: 100%;
 }
 
 * {
@@ -29,11 +36,11 @@ body {
 }
 
 .container, .buttons-section {
-  background-color: #faf3dd;
+  background-color: var(--beige-color);
 }
 
 footer {
-  background-color: #faf3dd;
+  background-color: var(--beige-color);
   padding: 24px;
 }
 
@@ -41,6 +48,29 @@ footer {
   margin: 0 auto;
   text-align: center;
   /* max-width: 1000px; */
+}
+
+.accordion-container {
+  border: 1px solid black;
+}
+
+.accordion-container button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.tabs {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+}
+
+.tab-container {
+  margin: 0 auto;
 }
 
 .microphone-list {
