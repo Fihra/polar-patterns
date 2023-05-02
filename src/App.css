@@ -161,6 +161,10 @@ footer {
   margin: 0 auto;
 }
 
+.detail-container .css-1qzevvg {
+  margin: 0rem 125px 0px;
+}
+
 .buttons-section select {
   background-color: var(--green-color);
   color: white;
@@ -184,6 +188,10 @@ footer {
 
   .container .detail-container {
     order: -1;
+  }
+  
+  footer {
+    padding-top: 68px;
   }
 }
 
