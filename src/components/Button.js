@@ -3,10 +3,9 @@ import usePattern from '../context/CanvasContext';
 
 const Button = (props) => {
     const {key, btnLabel} = props;
-    const { currentPattern, setPattern } = usePattern();
+    const { setPattern } = usePattern();
 
     const onChange = () => {
-        console.log("Current Pattern: ", currentPattern);
         setPattern(btnLabel);
     }
 
