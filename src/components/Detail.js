@@ -82,7 +82,7 @@ const Detail = (props) => {
             {showInfo()}
             <h3>Examples (based on <a href="https://www.sweetwater.com/">Sweetwater</a> prices)</h3>
             <div className="carousel-container">
-            {showCarousel()}
+                {showCarousel()}
             </div>
 
             {/* <button onClick={playMusic}>Play</button>
