@@ -161,6 +161,10 @@ footer {
   margin: 0 auto;
 }
 
+#my-tooltip {
+  word-wrap: break-word;
+}
+
 .detail-container .css-1qzevvg {
   margin: 0rem 125px 0px;
 }
@@ -189,7 +193,7 @@ footer {
   .container .detail-container {
     order: -1;
   }
-  
+
   footer {
     padding-top: 68px;
   }
@@ -198,5 +202,15 @@ footer {
 @media screen and (max-width: 840px) {
   .tabs {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .carousel-container {
+    width: 200px;
+  }
+
+  .detail-container .css-1qzevvg {
+    margin: 0rem 48px 0px;
   }
 }
