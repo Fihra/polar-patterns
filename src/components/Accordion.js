@@ -1,6 +1,9 @@
 import{ React, useState } from "react";
 import { diaphragmData, diaphragmDefinitions } from "./DiaphragmData";
 import Tab from "./Tab";
+import minusSign from '../assets/icons/minus_symbol.png';
+import plusSign from '../assets/icons/plus_symbol.png';
+import { CSSTransition } from "react-transition-group";
 
 const Accordion = () => {
     const [activeAccordion, setActiveAccordion] = useState(false);
@@ -10,10 +13,6 @@ const Accordion = () => {
         setActiveAccordion(!activeAccordion);
         // setActiveAccordion(index === activeAccordion ? -1: index);
     }
-
-    const testData = [
-        "blahhh"
-    ]
 
     const showAccordion = () => {
         return (
@@ -27,19 +26,14 @@ const Accordion = () => {
         )
     }
 
-    console.log(activeAccordion);
     return(
-        // <div>
-        //     {Object.keys(diaphragmData).map((item, index) => (
-        //         <div key="index">
-        //             <button onClick={() => handleClick(index)}>Diaphragm Size Info</button>
-        //             {index === activeAccordion && <p>{item}</p>}
-        //         </div>
-        //     ))}
-        // </div>
-        <div className="accordion-container">
-            <button onClick={(e) => handleClick(e)}>Diaphragm Size Info {activeAccordion ? "-" : "+" }</button>
-            {activeAccordion ? showAccordion() : null}
+        <div>
+            <CSSTransition in={activeAccordion} timeout={200} classNames="tab-container">
+            <div className="accordion-container">
+                <button onClick={(e) => handleClick(e)}>Diaphragm Size Info <img className="accordion-icon" src={activeAccordion ? minusSign : plusSign} alt="open or closed accordion"/></button>
+                {activeAccordion ? showAccordion() : null}
+            </div>
+            </CSSTransition>
         </div>
     )
 }
