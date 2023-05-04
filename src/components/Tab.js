@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { diaphragmDefinitions } from "./DiaphragmData";
-import { Tooltip as ReactTooltip, Tooltip } from "react-tooltip";
+import { Tooltip } from "react-tooltip";
 
 const Tab = (props) => {
     const [currentMicInfo, setcurrentMicInfo] = useState("");
@@ -25,14 +25,11 @@ const Tab = (props) => {
                 const firstLetter = words[0].charAt(0).toUpperCase();
                 const remainingLetters = words[0].substring(1);
                 words[0] = firstLetter + remainingLetters;
-                console.log(tooltip)
                 return (
-                    <div >
-                        <div >
-                            
+                    <div>
+                        <div>
                             <p><b className="diaphragm-category" onMouseOut={hideMicInfo} data-info={original} onMouseOver={showMicInfo} data-tooltip-id="my-tooltip" data-tooltip-content={diaphragmDefinitions[currentMicInfo]}>{words.length > 1 ? words[0] + ' ' + words[1] : words[0]}:</b> {data[item]}</p>
                         </div>
-                        
                     </div>
                 )
             })}
