@@ -55,7 +55,8 @@ export const hypercardioidData = {
 
 export const subcardioidData = {
     details: [
-        "similar to omnidirectional, but reduced sound behind microphone"
+        "similar to omnidirectional, but reduced sound behind microphone",
+        "receive audio signal from source & the acoustic environment"
     ],
     images: data.filter((mic, key) => {
         if(mic.micPattern === "SubCardioid"){
