@@ -4,6 +4,7 @@ import { Microphone } from './Microphone';
 export const omnidirectionalData = {
     details: [
         "360\u00b0 angle",
+        "sensitive sound input equally in all directions",
         "flat frequency/best bass response"
     ],
     images: data.filter((mic, key) => {
@@ -15,8 +16,9 @@ export const omnidirectionalData = {
 
 export const bidirectionalData = {
     details: [
-        "equal amount of sound from front and back of the mic",
-        "least bass response"
+        "equal amount of sound from front & back of the mic",
+        "least bass response",
+        "for proximity settings"
     ],
     images: data.filter((mic, key) => {
         if(mic.micPattern === "Bidirectional"){
