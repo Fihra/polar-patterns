@@ -11,7 +11,6 @@ const Accordion = () => {
     const handleClick = (e) => {
         e.preventDefault();
         setActiveAccordion(!activeAccordion);
-        // setActiveAccordion(index === activeAccordion ? -1: index);
     }
 
     const showAccordion = () => {

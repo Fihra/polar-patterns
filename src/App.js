@@ -39,9 +39,6 @@ const App = () => {
 
   })
 
-  // console.log("Width: ", windowSize[0]);
-  // console.log("Height: ", windowSize[1]);
-
   return (
     <div className="App">
       <main className="top-section">
