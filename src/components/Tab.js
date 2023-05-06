@@ -14,11 +14,21 @@ const Tab = (props) => {
         setcurrentMicInfo("");
     }
 
+    //TODO: Create mobile view to replace on hover effect of tooltips
+    // Create a panel on click event to open and close panel for mobile view only
+    const showMobileTooltip = () => {
+
+    }
+
+    const hideMobileTooltip = () => {
+
+    }
+
     return (
         <div className="tab-container">
             <section>
             <h3>{size}</h3>
-            <Tooltip id="my-tooltip" />
+            <Tooltip id="my-tooltip"/>
             {Object.keys(data).map((item, tooltip) => {
                 const original = item;
                 const words = item.split(/(?=[A-Z])/);
