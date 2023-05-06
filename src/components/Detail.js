@@ -58,11 +58,14 @@ const Detail = (props) => {
     const showInfo = () => {
         if(currentPattern !== "Clear"){
             return (
+                <>
                 <ul>
                     {patterns[currentPattern].info.details.map((point) => {
                         return <li>{point}</li>
                     })}
                 </ul>
+                <h3>Examples (based on <a href="https://www.sweetwater.com/">Sweetwater</a> prices)</h3>
+                </>
             )
         } 
         return <p>Select a pattern from the buttons above</p>
@@ -80,7 +83,6 @@ const Detail = (props) => {
         <div className="detail-container">
             <h2>{currentPattern !== "Clear" ? currentPattern : "Details"}</h2>
             {showInfo()}
-            <h3>Examples (based on <a href="https://www.sweetwater.com/">Sweetwater</a> prices)</h3>
             <div className="carousel-container">
                 {showCarousel()}
             </div>
