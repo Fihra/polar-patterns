@@ -231,6 +231,10 @@ footer {
   .tabs {
     flex-direction: column;
   }
+
+  #my-tooltip {
+    max-width: 200px;
+  }
 }
 
 @media screen and (max-width: 440px) {
