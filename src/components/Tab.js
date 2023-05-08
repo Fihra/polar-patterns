@@ -55,9 +55,12 @@ const Tab = (props) => {
         console.log("show mobile panel");
     }
 
-    const hideMobileTooltip = () => {
-        return 
+    const hideMobileTooltip = (e) => {
+        setMobilePanel(false);
+        hideMicInfo();
     }
+
+    document.addEventListener('touchstart', hideMobileTooltip, true);
 
     return (
         <div className="tab-container">
