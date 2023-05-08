@@ -76,6 +76,10 @@ footer {
   width: 30px;
 }
 
+.tab-container h3 {
+  text-decoration: underline;
+}
+
 .tab-container-enter section{
   opacity: 0;
   transform: translateY(-10%);  
@@ -214,8 +218,8 @@ footer {
   background-color: var(--green-color);
   color: white;
   padding: 3px;
-  opacity: .8;
-  /* z-index: 1; */
+  opacity: .9;
+  z-index: 1;
   border-radius:2rem;
   max-width: 250px;
   word-wrap: break-word;
