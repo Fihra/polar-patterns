@@ -5,7 +5,7 @@ import minusSign from '../assets/icons/minus_symbol.png';
 import plusSign from '../assets/icons/plus_symbol.png';
 import { CSSTransition } from "react-transition-group";
 
-const Accordion = () => {
+const Accordion = (props) => {
     const [activeAccordion, setActiveAccordion] = useState(false);
 
     const handleClick = (e) => {
@@ -18,7 +18,7 @@ const Accordion = () => {
             <div className="tabs">
                 {Object.keys(diaphragmData).map((data, index) => {
                 return (
-                    <Tab key={index} data={diaphragmData[data]} size={data}/>
+                    <Tab key={index} data={diaphragmData[data]} size={data} windowSize={props.windowSize}/>
                 )
             })}
             </div>
