@@ -14,7 +14,7 @@ import Accordion from './components/Accordion';
 const App = () => {
   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
-    window.innerHight
+    window.innerHeight
   ]);
   const patterns = useContext(PatternContext);
 
@@ -44,7 +44,7 @@ const App = () => {
       <main className="top-section">
         <h1>Polar Patterns</h1>
         <About/>
-        <Accordion/>
+        <Accordion windowSize={windowSize}/>
       </main>
 
       <CanvasProvider>
