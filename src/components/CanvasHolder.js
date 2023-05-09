@@ -20,7 +20,7 @@ const CanvasHolder = (props) => {
 
     const mobileScale = useCallback(() => {
         return windowSize[0] < 940;
-    }, [windowSize])
+    }, [])
 
     const drawOmnidirectional = useCallback((context, canvas) => {
         //Omnidirectional
@@ -404,7 +404,7 @@ const CanvasHolder = (props) => {
                 return;
         }
 
-    }, [currentPattern, windowSize, mobileScale, drawBidirectional, drawBoundary, drawCardioid, drawHypercardioid, drawOmnidirectional, drawShotgun, drawSubcardioid, showDesktopLines, showDesktopText, showMobileLines, showMobileText]);
+    }, [currentPattern, windowSize, drawListener, mobileScale, drawBidirectional, drawBoundary, drawCardioid, drawHypercardioid, drawOmnidirectional, drawShotgun, drawSubcardioid, showDesktopLines, showDesktopText, showMobileLines, showMobileText]);
 
     const checkWindowSize = () => {
         if(mobileScale()) {
