@@ -405,7 +405,7 @@ const CanvasHolder = (props) => {
                 return;
         }
 
-    }, [currentPattern, windowSize]);
+    }, [currentPattern, windowSize, drawOmnidirectional, drawBidirectional, drawCardioid, drawHypercardioid, drawSubcardioid, drawShotgun, drawBoundary]);
 
     const checkWindowSize = () => {
         if(mobileScale()) {
