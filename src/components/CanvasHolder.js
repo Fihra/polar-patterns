@@ -22,6 +22,9 @@ const CanvasHolder = (props) => {
         return windowSize[0] < 940;
     }, [])
 
+    useEffect(() => {
+    }, [mobileScale])
+
     const drawOmnidirectional = useCallback((context, canvas) => {
         //Omnidirectional
         context.strokeStyle = red;
@@ -32,6 +35,9 @@ const CanvasHolder = (props) => {
         context.stroke();
         context.closePath();
     }, [])
+
+    useEffect(() => {
+    }, [drawOmnidirectional])
 
     const drawBidirectional = useCallback((context, canvas) => {
         const bidirectionalRadius = 0.57;
@@ -54,6 +60,9 @@ const CanvasHolder = (props) => {
         context.stroke();
         context.closePath();
     }, [])
+
+    useEffect(() => {
+    }, [drawBidirectional])
 
     const drawCardioid = useCallback((context, canvas) => {
         //Cardioid
@@ -81,6 +90,9 @@ const CanvasHolder = (props) => {
         context.stroke();
         context.closePath();
     }, [])
+
+    useEffect(() => {
+    }, [drawCardioid])
 
     const drawHypercardioid = useCallback((context, canvas) => {
         //Hypercardioid
@@ -117,6 +129,9 @@ const CanvasHolder = (props) => {
         context.closePath();
     }, [])
 
+    useEffect(() => {
+    }, [drawHypercardioid])
+
     const drawSubcardioid = useCallback((context, canvas) => {
         //Subcardioid
         context.strokeStyle = blue;
@@ -127,6 +142,9 @@ const CanvasHolder = (props) => {
         context.stroke();
         context.closePath();
     }, [])
+
+    useEffect(() => {
+    }, [drawSubcardioid])
 
     const drawShotgun = useCallback((context, canvas) => {
         //Subcardioid
@@ -176,6 +194,9 @@ const CanvasHolder = (props) => {
         context.closePath();
     }, [])
 
+    useEffect(() => {
+    }, [drawShotgun])
+
     const drawBoundary = useCallback((context, canvas) => {
         //Boundary
         context.strokeStyle = brown;
@@ -187,6 +208,9 @@ const CanvasHolder = (props) => {
         context.closePath();
     }, [])
 
+    useEffect(() => {
+    }, [drawBoundary])
+
     const drawListener = useCallback((context, canvas) => {
         //Listener
         context.strokeStyle = 'black';
@@ -195,6 +219,9 @@ const CanvasHolder = (props) => {
         context.stroke();
         context.closePath();
     }, [])
+
+    useEffect(() => {
+    }, [drawListener])
 
     const showDesktopText = useCallback((context, canvas) => {
         context.fillStyle = "black";
@@ -214,6 +241,9 @@ const CanvasHolder = (props) => {
         context.fillText("-15dB", canvas.width/2 + 5, canvas.height/2 - 140);
         context.fillText("-20dB", canvas.width/2 + 5, canvas.height/2 - 80);
     }, [])
+
+    useEffect(() => {
+    }, [drawListener])
 
     const showMobileText = useCallback((context, canvas) => {
         context.fillStyle = "black";
