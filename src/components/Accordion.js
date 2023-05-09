@@ -1,5 +1,5 @@
 import{ React, useState } from "react";
-import { diaphragmData, diaphragmDefinitions } from "./DiaphragmData";
+import { diaphragmData } from "./DiaphragmData";
 import Tab from "./Tab";
 import minusSign from '../assets/icons/minus_symbol.png';
 import plusSign from '../assets/icons/plus_symbol.png';

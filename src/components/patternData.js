@@ -7,7 +7,7 @@ export const omnidirectionalData = {
         "sensitive sound input equally in all directions",
         "flat frequency/best bass response"
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "Omnidirectional"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
@@ -20,7 +20,7 @@ export const bidirectionalData = {
         "least bass response",
         "for proximity settings"
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "Bidirectional"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
@@ -33,7 +33,7 @@ export const cardioidData = {
         "isolate microphone from unwanted ambient sounds",
         "greatly reduces sound behind the microphone"
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "Cardioid"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
@@ -46,7 +46,7 @@ export const hypercardioidData = {
     "narrow capturing, isolate sounds from sides",
     "most resistant to on-stage feedback",
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "HyperCardioid"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
@@ -58,7 +58,7 @@ export const subcardioidData = {
         "similar to omnidirectional, but reduced sound behind microphone",
         "receive audio signal from source & the acoustic environment"
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "SubCardioid"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
@@ -70,7 +70,7 @@ export const shotgunData = {
         "mostly used for voice recordings for film & TV",
         "small signals on the sides and more focused direction"
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "Shotgun"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
@@ -83,7 +83,7 @@ export const boundaryData = {
         "hemispherical pattern",
         "common on studio and stage"
     ],
-    images: data.filter((mic, key) => {
+    images: data.filter((mic) => {
         if(mic.micPattern === "Boundary"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
