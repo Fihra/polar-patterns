@@ -203,6 +203,13 @@ const CanvasHolder = (props) => {
         context.fillText("90\u00B0", canvas.width/2 + 320, canvas.height/2);
         context.fillText("180\u00B0", canvas.width/2 - 20, canvas.height/2 + 340);
         context.fillText("270\u00B0", 0, canvas.height/2);
+
+        context.font = "16px Arial";
+        context.fillText("-5dB", canvas.width/2 + 10, canvas.height/2 - 250);
+        context.fillText("-10dB", canvas.width/2 + 10, canvas.height/2 - 190);
+        context.fillText("-15dB", canvas.width/2 + 5, canvas.height/2 - 140);
+        context.fillText("-20dB", canvas.width/2 + 5, canvas.height/2 - 80);
+
     }
 
     const showMobileText = (context, canvas) => {
@@ -212,6 +219,12 @@ const CanvasHolder = (props) => {
         context.fillText("90\u00B0", canvas.width/2 + 160, canvas.height/2);
         context.fillText("180\u00B0", canvas.width/2 - 20, canvas.height/2 + 180);
         context.fillText("270\u00B0", 0, canvas.height/2);
+
+        context.font = "14px Arial";
+        context.fillText("-5dB", canvas.width/2 + 5, canvas.height/2 - 125);
+        context.fillText("-10dB", canvas.width/2 + 5, canvas.height/2 - 95);
+        context.fillText("-15dB", canvas.width/2, canvas.height/2 - 65);
+        context.fillText("-20dB", canvas.width/2, canvas.height/2 - 35);
     }
 
     const showDesktopLines = (context, canvas) => {
