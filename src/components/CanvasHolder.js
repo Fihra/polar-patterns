@@ -196,6 +196,140 @@ const CanvasHolder = (props) => {
         context.closePath();
     }
 
+    const showDesktopText = (context, canvas) => {
+        context.fillStyle = "black";
+        context.font = "20px Arial";
+        context.fillText("0\u00B0", canvas.width/2, canvas.height/2 - 320);
+        context.fillText("90\u00B0", canvas.width/2 + 320, canvas.height/2);
+        context.fillText("180\u00B0", canvas.width/2 - 20, canvas.height/2 + 340);
+        context.fillText("270\u00B0", 0, canvas.height/2);
+    }
+
+    const showMobileText = (context, canvas) => {
+        context.fillStyle = "black";
+        context.font = "16px Arial";
+        context.fillText("0\u00B0", canvas.width/2, canvas.height/2 - 160);
+        context.fillText("90\u00B0", canvas.width/2 + 160, canvas.height/2);
+        context.fillText("180\u00B0", canvas.width/2 - 20, canvas.height/2 + 180);
+        context.fillText("270\u00B0", 0, canvas.height/2);
+    }
+
+    const showDesktopLines = (context, canvas) => {
+        context.beginPath();
+        context.moveTo(50, 350);
+        context.lineTo(canvas.width - 50, 350);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(canvas.width/2, 50);
+        context.lineTo(canvas.width/2, canvas.height - 50);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(200, 90);
+        context.lineTo(500, 610);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(80, 220);
+        context.lineTo(620, 480);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(95, 510);
+        context.lineTo(605, 190);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(200, 610);
+        context.lineTo(505, 92);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 60, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 120, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 180, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 240, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+    }
+
+    const showMobileLines = (context, canvas) => {
+        context.beginPath();
+        context.moveTo(50, canvas.height/2);
+        context.lineTo(canvas.width - 50, canvas.height/2);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(canvas.width/2, 50);
+        context.lineTo(canvas.width/2, canvas.height - 50);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(74, 120);
+        context.lineTo(327, 280);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(130, 68);
+        context.lineTo(270, 334);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(66, 270);
+        context.lineTo(332, 130);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(124, 330);
+        context.lineTo(275, 70);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 30, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 60, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 90, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(canvas.width/2, canvas.height/2, 120, 0, 2 * Math.PI);
+        context.stroke();
+        context.closePath();
+    }
+
     useEffect(() => {
         const canvas = canvasRef.current;
         if(!canvas){
@@ -215,6 +349,10 @@ const CanvasHolder = (props) => {
         context.arc(canvas.width/2, canvas.height/2, canvas.width/2 - 50, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
+
+        !mobileScale() ? showDesktopLines(context, canvas) : showMobileLines(context, canvas);
+
+        !mobileScale() ? showDesktopText(context, canvas) : showMobileText(context, canvas);
         
         drawListener(context, canvas);
 
