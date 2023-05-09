@@ -3,7 +3,7 @@ import usePattern from '../context/CanvasContext';
 import { PatternContext } from '../context/PatternContext';
 import Carousel from 'react-spring-3d-carousel';
 
-const Detail = (props) => {
+const Detail = () => {
     const { currentPattern } = usePattern();
     const patterns = useContext(PatternContext);
 
