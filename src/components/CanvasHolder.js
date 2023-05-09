@@ -34,7 +34,7 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }, [mobileScale])
+    }, [])
 
     useEffect(() => {
     }, [drawOmnidirectional])
@@ -218,7 +218,7 @@ const CanvasHolder = (props) => {
         context.arc(canvas.width/2, canvas.height/2, 10, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-    }, [mobileScale])
+    }, [])
 
     useEffect(() => {
     }, [drawListener])
@@ -240,7 +240,7 @@ const CanvasHolder = (props) => {
         context.fillText("-10dB", canvas.width/2 + 10, canvas.height/2 - 190);
         context.fillText("-15dB", canvas.width/2 + 5, canvas.height/2 - 140);
         context.fillText("-20dB", canvas.width/2 + 5, canvas.height/2 - 80);
-    }, [mobileScale])
+    }, [])
 
     useEffect(() => {
     }, [drawListener])
@@ -262,7 +262,7 @@ const CanvasHolder = (props) => {
         context.fillText("-10dB", canvas.width/2 + 5, canvas.height/2 - 95);
         context.fillText("-15dB", canvas.width/2, canvas.height/2 - 65);
         context.fillText("-20dB", canvas.width/2, canvas.height/2 - 35);
-    }, [mobileScale])
+    }, [])
 
     const showDesktopLines = useCallback((context, canvas) => {
         context.beginPath();
@@ -320,7 +320,7 @@ const CanvasHolder = (props) => {
         context.arc(canvas.width/2, canvas.height/2, 240, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-    }, [mobileScale])
+    }, [])
 
     const showMobileLines = useCallback((context, canvas) => {
         context.beginPath();
@@ -378,7 +378,7 @@ const CanvasHolder = (props) => {
         context.arc(canvas.width/2, canvas.height/2, 120, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-    }, [mobileScale])
+    }, [])
 
     useEffect(() => {
         const canvas = canvasRef.current;
