@@ -76,6 +76,12 @@ footer {
   width: 30px;
 }
 
+.tab-container {
+  margin: 4px;
+  flex: 1 1 50%;
+  border: 1px solid black;
+}
+
 .tab-container h3 {
   text-decoration: underline;
 }
@@ -107,12 +113,6 @@ footer {
   margin: 0 auto;
   text-align: center;
   display: flex;
-}
-
-.tab-container {
-  margin: 0 auto;
-  flex: 1 1 50%;
-  border: 1px solid black;
 }
 
 .diaphragm-category {
@@ -225,7 +225,7 @@ footer {
   word-wrap: break-word;
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1080px) {
   .container {
     display: block;
     flex-flow: row wrap;
@@ -247,6 +247,10 @@ footer {
 @media screen and (max-width: 840px) {
   .tabs {
     flex-direction: column;
+  }
+
+  .tab-container {
+    margin-bottom: 20px;
   }
 
   #my-tooltip {
