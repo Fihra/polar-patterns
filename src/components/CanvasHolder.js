@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import usePattern from '../context/CanvasContext';
 
 const CanvasHolder = (props) => {
@@ -18,11 +18,11 @@ const CanvasHolder = (props) => {
         return canvasSize * radius;
     }
 
-    const mobileScale = () => {
+    const mobileScale = useCallback(() => {
         return windowSize[0] < 940;
-    }
+    }, [windowSize])
 
-    const drawOmnidirectional = (context, canvas) => {
+    const drawOmnidirectional = useCallback((context, canvas) => {
         //Omnidirectional
         context.strokeStyle = red;
         context.beginPath();
@@ -31,9 +31,9 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawBidirectional = (context, canvas) => {
+    const drawBidirectional = useCallback((context, canvas) => {
         const bidirectionalRadius = 0.57;
         const scaleSize = 0.72;
         
@@ -53,9 +53,9 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawCardioid = (context, canvas) => {
+    const drawCardioid = useCallback((context, canvas) => {
         //Cardioid
         context.strokeStyle = green;
         context.beginPath();
@@ -80,9 +80,9 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawHypercardioid = (context, canvas) => {
+    const drawHypercardioid = useCallback((context, canvas) => {
         //Hypercardioid
         context.strokeStyle = purple;
         context.beginPath();
@@ -115,9 +115,9 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawSubcardioid = (context, canvas) => {
+    const drawSubcardioid = useCallback((context, canvas) => {
         //Subcardioid
         context.strokeStyle = blue;
         context.beginPath();
@@ -126,9 +126,9 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawShotgun = (context, canvas) => {
+    const drawShotgun = useCallback((context, canvas) => {
         //Subcardioid
         context.strokeStyle = yellow;
         context.save();
@@ -174,9 +174,9 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawBoundary = (context, canvas) => {
+    const drawBoundary = useCallback((context, canvas) => {
         //Boundary
         context.strokeStyle = brown;
         context.beginPath();
@@ -185,18 +185,18 @@ const CanvasHolder = (props) => {
         context.fill();
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const drawListener = (context, canvas) => {
+    const drawListener = useCallback((context, canvas) => {
         //Listener
         context.strokeStyle = 'black';
         context.beginPath();
         context.arc(canvas.width/2, canvas.height/2, 10, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const showDesktopText = (context, canvas) => {
+    const showDesktopText = useCallback((context, canvas) => {
         context.fillStyle = "black";
         context.font = "20px Kanit";
 
@@ -213,10 +213,9 @@ const CanvasHolder = (props) => {
         context.fillText("-10dB", canvas.width/2 + 10, canvas.height/2 - 190);
         context.fillText("-15dB", canvas.width/2 + 5, canvas.height/2 - 140);
         context.fillText("-20dB", canvas.width/2 + 5, canvas.height/2 - 80);
+    }, [])
 
-    }
-
-    const showMobileText = (context, canvas) => {
+    const showMobileText = useCallback((context, canvas) => {
         context.fillStyle = "black";
         context.font = "16px Kanit";
 
@@ -233,9 +232,9 @@ const CanvasHolder = (props) => {
         context.fillText("-10dB", canvas.width/2 + 5, canvas.height/2 - 95);
         context.fillText("-15dB", canvas.width/2, canvas.height/2 - 65);
         context.fillText("-20dB", canvas.width/2, canvas.height/2 - 35);
-    }
+    }, [])
 
-    const showDesktopLines = (context, canvas) => {
+    const showDesktopLines = useCallback((context, canvas) => {
         context.beginPath();
         context.moveTo(50, 350);
         context.lineTo(canvas.width - 50, 350);
@@ -291,9 +290,9 @@ const CanvasHolder = (props) => {
         context.arc(canvas.width/2, canvas.height/2, 240, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
-    const showMobileLines = (context, canvas) => {
+    const showMobileLines = useCallback((context, canvas) => {
         context.beginPath();
         context.moveTo(50, canvas.height/2);
         context.lineTo(canvas.width - 50, canvas.height/2);
@@ -349,7 +348,7 @@ const CanvasHolder = (props) => {
         context.arc(canvas.width/2, canvas.height/2, 120, 0, 2 * Math.PI);
         context.stroke();
         context.closePath();
-    }
+    }, [])
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -405,7 +404,7 @@ const CanvasHolder = (props) => {
                 return;
         }
 
-    }, [currentPattern, windowSize, drawOmnidirectional, drawBidirectional, drawCardioid, drawHypercardioid, drawSubcardioid, drawShotgun, drawBoundary, mobileScale, showDesktopLines, showDesktopText, showMobileLines, showMobileText]);
+    }, [currentPattern, windowSize]);
 
     const checkWindowSize = () => {
         if(mobileScale()) {
