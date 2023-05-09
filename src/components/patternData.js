@@ -11,6 +11,7 @@ export const omnidirectionalData = {
         if(mic.micPattern === "Omnidirectional"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
+        return;
     })
 }
 
@@ -24,6 +25,7 @@ export const bidirectionalData = {
         if(mic.micPattern === "Bidirectional"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
+        return;
     })
 }
 
@@ -36,7 +38,8 @@ export const cardioidData = {
     images: data.filter((mic) => {
         if(mic.micPattern === "Cardioid"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
-        } 
+        }
+        return; 
     })
 }
 
@@ -50,6 +53,7 @@ export const hypercardioidData = {
         if(mic.micPattern === "HyperCardioid"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
+        return;
     })
 }
 
@@ -62,6 +66,7 @@ export const subcardioidData = {
         if(mic.micPattern === "SubCardioid"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
+        return;
     })
 }
 
@@ -74,6 +79,7 @@ export const shotgunData = {
         if(mic.micPattern === "Shotgun"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
+        return;
     })
 } 
 
@@ -87,5 +93,6 @@ export const boundaryData = {
         if(mic.micPattern === "Boundary"){
             return Microphone(mic.name, mic.cost, mic.imageUrl);
         } 
+        return;
     })
 }
